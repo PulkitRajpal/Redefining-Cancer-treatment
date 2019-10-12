@@ -1,0 +1,110 @@
+{% extends "bootstrap/base.html" %}
+{% block content %}
+
+ 
+<div class="set" style="font-family: helvetica;font-size: 20px; ">
+<div class="container">
+  <div class="jumbotron" style="background-color:#1daeff !important;">
+    <!-- <h2 style="color:#fff;"></h2>       -->
+     <h1 style="color:#fff;font-size: 30px;">Genetic Mutation</h1>      
+    <p style="color:#fff;">Using Machine Learning to Classify Genetic Mutation</p>
+  </div>
+          
+</div>
+
+<div class="card text-center">
+  <div class="card-header"style="font-size: 30px ;background-color:silver;">
+    <strong>Results:</strong>
+    
+  </div>
+  <div class="card-body" style="background-color:silver;">
+    <br>
+    <h5 class="card-title"style="color:black;font-size: 30px;"><strong>&nbsp&nbsp&nbsp<u> Genetic Mutation</u></strong></h5>
+    <strong>The classified mutation using the clinical evidence is:</strong>
+    
+    <!-- <p class="card-text"><div class="alert alert-danger" role="alert"> -->
+  <!-- {{ name }} -->
+<!-- </div> -->
+
+</p>
+<!-- Main ML Prediction Display Here -->
+    {% if prediction ==  1 %}
+    <p class="card-text"><div class="alert alert-danger" role="alert">
+  <b><em>Point Mutation</em></b>
+  <br>
+ <b> Consult Dr.A.K in Room no:203</b>
+</div></p>
+    <!-- <a href="#" class="btn btn-danger"></a> -->
+     {% elif prediction == 2 %}
+  <p class="card-text"><div class="alert alert-danger" role="alert">
+  <b><em>Translocation</em></b>
+  <br>
+  <b> Consult Dr.Jones in Room no:109</b>
+</div></p>
+    <!-- <a href="#" class="btn btn-primary"></a> -->
+    {% elif prediction == 3 %}
+  <p class="card-text"><div class="alert alert-danger" role="alert">
+  <b><em>Gene Amplification</em></b>
+  <br>
+   <b> Consult Dr.Betty in Room no:100</b>
+</div></p>
+    <!-- <a href="#" class="btn btn-primary"></a> -->
+    {% elif prediction == 4 %}
+  <p class="card-text"><div class="alert alert-danger" role="alert">
+ <b><em>Inversion</em></b>
+ <br>
+   <b>Consult Dr.Fred in Room no:015</b>
+</div></p>
+    <!-- <a href="#" class="btn btn-primary"></a> -->
+    {% elif prediction == 5 %}
+  <p class="card-text"><div class="alert alert-danger" role="alert">
+  <b><em>Deletion</em></b>
+  <br>
+   <b>Consult Dr.Well in Room no:207</b>
+</div></p>
+    <!-- <a href="#" class="btn btn-primary"></a> -->
+    {% elif prediction == 6 %}
+  <p class="card-text"><div class="alert alert-danger" role="alert">
+  <b><em>Dupication</em></b>
+  <br>
+   <b>Consult Dr.Shelly in Room no:308</b>
+</div></p>
+    <!-- <a href="#" class="btn btn-primary"></a> -->
+    {% elif prediction == 7 %}
+  <p class="card-text"><div class="alert alert-danger" role="alert">
+  <b><em>Aneuploidy</em></b>
+  <br>
+   <b>Consult Dr.Andrew in Room no:004</b>
+</div></p>
+    <!-- <a href="#" class="btn btn-primary"></a> -->
+    {% elif prediction == 8 %}
+  <p class="card-text"><div class="alert alert-danger" role="alert">
+  <b><em>Epigenetic changes</em></b>
+  <br>
+   <b> Consult Dr.Bell in Room no:103</b>
+</div></p>
+    <!-- <a href="#" class="btn btn-primary"></a> -->
+    {% elif prediction == 9 %}
+  <p class="card-text"><div class="alert alert-danger" role="alert">
+  <b><em>Non Cancerous</em></b>
+  <br>
+  <b> Consult Dr.Den in Room no:001</b>
+</div></p>
+    <!-- <a href="#" class="btn btn-primary"></a> -->
+    {% endif %}
+  </div>
+
+<!-- Main ML Prediction Display Ends Here -->
+  <!-- <div class="card-footer text-muted">
+   
+  </div> -->
+</div>
+</div>
+
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"
+      href="{{url_for('.static', filename='css/styles.css')}}">
+{% endblock %}
