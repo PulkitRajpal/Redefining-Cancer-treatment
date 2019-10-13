@@ -20,7 +20,7 @@ def index():
 
 @app.route('/predict', methods=['POST'])
 def predict():
-	df= pd.read_csv("C:/Users/pulki/Desktop/hackathon/data/mydata.csv")
+	df= pd.read_csv("C:/Users/pulki/Desktop/hackathon/data/mydata.csv") #we can increase the time of loading of our web which we were having problem in prediction, i have got a solution..... 
 	# Features and Labels
 	df_X = df.Text1
 	df_Y = df.Class
